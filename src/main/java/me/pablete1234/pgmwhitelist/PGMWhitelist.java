@@ -39,7 +39,7 @@ public class PGMWhitelist extends JavaPlugin {
                     .count() + " players from the whitelist");
         }
 
-        @Command(aliases = "kick", desc = "Kicks all players not on the whitelist")
+        @Command(aliases = "kick", desc = "Kicks all players not on the whitelist", perms = "wl.all")
         public void kick(CommandSender sender) {
             sender.sendMessage("Kicked " + Bukkit.getOnlinePlayers()
                     .stream()
@@ -48,7 +48,7 @@ public class PGMWhitelist extends JavaPlugin {
                     .count() + " players who weren't on the whitelist");
         }
 
-        @Command(aliases = "team", desc = "Clears the whitelist")
+        @Command(aliases = "team", desc = "Clears the whitelist", perms = "wl.all")
         public void team(CommandSender sender) {
             Match match = PGM.get().getMatchManager().getMatch(sender);
             if (match == null) {
